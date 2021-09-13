@@ -19,7 +19,6 @@ const httpOptions = {
 
 export class FetchService {
 
-  isLoggedOn:boolean = false;
   authToken:string = "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MzE1MzcwMzIsImlzcyI6InJvb3QiLCJzdWIiOiJ0ZXN0IiwiZXhwIjoxNjMyNDAxMDMyfQ.2DT6c4Ac_aYHsIgxgIf72VqQ32IRDsESdqtVqDBQ9T5Dx7CvygYyvnUNN7ZFhFGS4Tj4PmRgy1x4iKS4Dbyb-g";
 
   constructor(private http: HttpClient) {}
@@ -41,8 +40,23 @@ export class FetchService {
     window.sessionStorage.setItem(TOKEN_KEY, token);
   }
 
-  public getTOken(): string | null {
+  public obtenerToken(): string | null {
     return window.sessionStorage.getItem(TOKEN_KEY);
+  }
+
+  public guardarUsuarioToken(user: any) {
+    window.sessionStorage.removeItem(USER_KEY);
+    window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
+  }
+
+  public obtenerUsuarioToken(): any{
+    const user = window.sessionStorage.getItem(USER_KEY);
+    if (user) {
+      return JSON.parse(user);
+    }
+
+    return {};
+
   }
 
   // 
@@ -93,7 +107,7 @@ export class FetchService {
     }
 
     if (tipo == "grupos") {
-      return this.http.get(API_URL + "grupos/nombre/grupo%20test", {headers: headers});
+      return this.http.get(API_URL + "grupos/nombre/", {headers: headers});
     }
 
     if (tipo == "mensajes") {
