@@ -19,12 +19,12 @@ const httpOptions = {
 
 export class FetchService {
 
-  authToken:string = "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MzE1MzcwMzIsImlzcyI6InJvb3QiLCJzdWIiOiJ0ZXN0IiwiZXhwIjoxNjMyNDAxMDMyfQ.2DT6c4Ac_aYHsIgxgIf72VqQ32IRDsESdqtVqDBQ9T5Dx7CvygYyvnUNN7ZFhFGS4Tj4PmRgy1x4iKS4Dbyb-g";
+  authToken:string = "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MzE2NzE5NDksImlzcyI6InJvb3QiLCJzdWIiOiJ0ZXN0IiwiZXhwIjoxNjMyNTM1OTQ5fQ.VAchJQ1bz7ZNC5VBFM9f_ZQx4KoN4j_nQnZpJaIXz07D_hKia-4GtduzX3GqnAvEttOBVuHW4NbuBBsvagdGgw";
 
   constructor(private http: HttpClient) {}
 
   // Almacena el bearer token, indica que estamos logueados
-  autorizar(user:string, password:string): Observable<any>{
+  loguear(user:string, password:string): Observable<any>{
     return this.http.post(API_URL + "login", {
       user,
       password
@@ -106,8 +106,12 @@ export class FetchService {
       return this.http.get(API_URL);
     }
 
-    if (tipo == "grupos") {
+    if (tipo == "gruposxnombre") {
       return this.http.get(API_URL + "grupos/nombre/", {headers: headers});
+    }
+
+    if (tipo == "grupos") {
+      return this.http.get(API_URL + "grupos/", {headers: headers});
     }
 
     if (tipo == "mensajes") {
