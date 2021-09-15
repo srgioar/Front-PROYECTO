@@ -20,7 +20,7 @@ const httpOptions = {
 export class FetchService {
 
   authToken:string =
-  "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MzE2ODQ1MDUsImlzcyI6InJvb3QiLCJzdWIiOiJ0ZXN0IiwiZXhwIjoxNjMyNTQ4NTA1fQ.Ur7DbIZzlmQwjU3XoQ-v2u03q6_o13kA1NXHAxzbvSLEdvY-yG4zS3Pwy9ACz_TItELqrzbNqa_-ogcmGAMhNg;
+  "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MzE2ODQ1MDUsImlzcyI6InJvb3QiLCJzdWIiOiJ0ZXN0IiwiZXhwIjoxNjMyNTQ4NTA1fQ.Ur7DbIZzlmQwjU3XoQ-v2u03q6_o13kA1NXHAxzbvSLEdvY-yG4zS3Pwy9ACz_TItELqrzbNqa_-ogcmGAMhNg;
 
   constructor(private http: HttpClient) {}
 
