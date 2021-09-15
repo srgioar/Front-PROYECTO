@@ -19,7 +19,8 @@ const httpOptions = {
 
 export class FetchService {
 
-  authToken:string = "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MzE2NzE5NDksImlzcyI6InJvb3QiLCJzdWIiOiJ0ZXN0IiwiZXhwIjoxNjMyNTM1OTQ5fQ.VAchJQ1bz7ZNC5VBFM9f_ZQx4KoN4j_nQnZpJaIXz07D_hKia-4GtduzX3GqnAvEttOBVuHW4NbuBBsvagdGgw";
+  authToken:string =
+  "Bearer  eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MzE2ODQ1MDUsImlzcyI6InJvb3QiLCJzdWIiOiJ0ZXN0IiwiZXhwIjoxNjMyNTQ4NTA1fQ.Ur7DbIZzlmQwjU3XoQ-v2u03q6_o13kA1NXHAxzbvSLEdvY-yG4zS3Pwy9ACz_TItELqrzbNqa_-ogcmGAMhNg;
 
   constructor(private http: HttpClient) {}
 
